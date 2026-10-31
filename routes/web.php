@@ -43,3 +43,6 @@ Route::get('myrequest', 'App\Http\Controllers\MyController@getURL');
 Route::get('getform', 'App\Http\Controllers\MyController@getForm');
 
 Route::post('postform', 'App\Http\Controllers\MyController@postForm');
+
+Route::get('uploadfile', 'App\Http\Controllers\MyController@getUpload');
+Route::post('uploadfile', 'App\Http\Controllers\MyController@postUploadFile');
