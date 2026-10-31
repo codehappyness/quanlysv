@@ -54,6 +54,13 @@ Route::get('testtemplate', function () {
 
 
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', function () {
+        return view('admin.template.testtemplate');
+    });
+    Route::get('dashboard', function () {
+        return view('admin.template.testtemplate');
+    });
+
     Route::group(['prefix' => 'nganh'], function () {
         Route::get('danhsach', 'App\Http\Controllers\NganhController@getDanhSach');
         Route::get('them', 'App\Http\Controllers\NganhController@getThem');
