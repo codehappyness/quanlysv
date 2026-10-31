@@ -46,3 +46,7 @@ Route::post('postform', 'App\Http\Controllers\MyController@postForm');
 
 Route::get('uploadfile', 'App\Http\Controllers\MyController@getUpload');
 Route::post('uploadfile', 'App\Http\Controllers\MyController@postUploadFile');
+
+Route::get('testtemplate', function () {
+    return view('admin.template.testtemplate');
+});
