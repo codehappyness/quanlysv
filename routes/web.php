@@ -45,8 +45,19 @@ Route::get('getform', 'App\Http\Controllers\MyController@getForm');
 Route::post('postform', 'App\Http\Controllers\MyController@postForm');
 
 Route::get('uploadfile', 'App\Http\Controllers\MyController@getUpload');
+
 Route::post('uploadfile', 'App\Http\Controllers\MyController@postUploadFile');
 
 Route::get('testtemplate', function () {
     return view('admin.template.testtemplate');
+});
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'nganh'], function () {
+        Route::get('danhsach', 'App\Http\Controllers\NganhController@getDanhSach');
+        Route::get('them', 'App\Http\Controllers\NganhController@getThem');
+        Route::post('them', 'App\Http\Controllers\NganhController@postThem');
+    });
+    Route::group(['prefix' => 'sinhvien'], function () {});
 });
